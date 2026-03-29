@@ -7,9 +7,8 @@ Domyślnie ten model używa portu USB wyłącznie do ładowania baterii. Ta inst
 ## 📖 Pełna dokumentacja
 
 Szczegółowa instrukcja z poleceniami i opisem konfiguracji jest dostępna na stronie:
-👉 **[TUTAJ WKLEJ LINK DO SWOJEJ STRONY GITHUB PAGES]** 👈
+👉 **[https://secondfrompl.github.io/TP-Link-M7000/]** 👈
 
-*(Przykład linku: `https://twoj-login.github.io/nazwa-repozytorium/`)*
 
 ## Zawartość poradnika
 
