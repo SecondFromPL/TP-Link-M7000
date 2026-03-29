@@ -37,3 +37,7 @@ show_warning: true
 
 [**5. Opcjonalne: Optymalizacja i wyłączenie Wi-Fi** - Dodatkowe kroki zmniejszające zużycie baterii]({{ site.baseurl }}/05-optimization.html){: .list-group-item .list-group-item-action .p-3}
 </div>
+
+<div class="d-flex justify-content-end mt-5 border-top pt-4" markdown="1">
+[Rozpocznij: 1. Telnet (Root) &raquo;]({{ site.baseurl }}/01-telnet.html){: .btn .btn-primary}
+</div>

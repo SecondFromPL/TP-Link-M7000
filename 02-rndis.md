@@ -4,22 +4,39 @@ title: 2. Aktywacja trybu RNDIS
 show_warning: false
 ---
 
-[&laquo; Powrót do spisu treści]({{ site.baseurl }}/index.html){: .btn .btn-secondary .mb-4}
+[&laquo; Strona główna]({{ site.baseurl }}/index.html){: .btn .btn-secondary .mb-4}
 
 <h1 class="mb-4">2. Aktywacja trybu RNDIS</h1>
 
 <p>Połącz się z routerem za pomocą klienta Telnet. Zmień domyślny tryb pracy portu USB z <code>user</code> na <code>rndis</code> i zrestartuj urządzenie.</p>
 
-<div class="console-block shadow-sm">
-  <button class="btn btn-outline-light copy-btn" onclick="copyToClipboard(this)">Kopiuj</button>
-  <pre><code>uci set usb_enum.enum.mode='rndis'
-uci commit usb_enum
-reboot</code></pre>
+<div class="terminal-window d-flex align-items-center justify-content-between shadow-sm">
+  <div class="copy-target">
+    <span class="terminal-prompt">root@M7000:~#</span>
+    <pre class="terminal-command"><code id="cmd2-1">uci set usb_enum.enum.mode='rndis'</code></pre>
+  </div>
+  <button class="btn btn-sm btn-outline-light copy-btn" data-clipboard-target="#cmd2-1">Kopiuj</button>
+</div>
+
+<div class="terminal-window d-flex align-items-center justify-content-between shadow-sm">
+  <div class="copy-target">
+    <span class="terminal-prompt">root@M7000:~#</span>
+    <pre class="terminal-command"><code id="cmd2-2">uci commit usb_enum</code></pre>
+  </div>
+  <button class="btn btn-sm btn-outline-light copy-btn" data-clipboard-target="#cmd2-2">Kopiuj</button>
+</div>
+
+<div class="terminal-window d-flex align-items-center justify-content-between shadow-sm">
+  <div class="copy-target">
+    <span class="terminal-prompt">root@M7000:~#</span>
+    <pre class="terminal-command"><code id="cmd2-3">reboot</code></pre>
+  </div>
+  <button class="btn btn-sm btn-outline-light copy-btn" data-clipboard-target="#cmd2-3">Kopiuj</button>
 </div>
 
 <p>Po restarcie podłącz router kablem do komputera z Windows 11. System powinien wykryć nowe urządzenie sieciowe.</p>
 
 <div class="d-flex justify-content-between mt-5 border-top pt-4" markdown="1">
-[&laquo; Wstecz]({{ site.baseurl }}/01-telnet.html){: .btn .btn-outline-secondary}
-[Krok 3: Konfiguracja sieci &raquo;]({{ site.baseurl }}/03-network.html){: .btn .btn-primary .btn-lg}
+[&laquo; 1. Telnet]({{ site.baseurl }}/01-telnet.html){: .btn .btn-outline-secondary}
+[3. Sieć i mostkowanie &raquo;]({{ site.baseurl }}/03-network.html){: .btn .btn-primary}
 </div>

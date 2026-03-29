@@ -4,7 +4,7 @@ title: 1. Uzyskanie dostępu Telnet
 show_warning: false
 ---
 
-[&laquo; Powrót do spisu treści]({{ site.baseurl }}/index.html){: .btn .btn-secondary .mb-4}
+[&laquo; Strona główna]({{ site.baseurl }}/index.html){: .btn .btn-secondary .mb-4}
 
 <h1 class="mb-4">1. Uzyskanie dostępu Telnet (Root)</h1>
 
@@ -12,6 +12,7 @@ show_warning: false
 
 <p><em>Miejsce na Twój autorski opis procedury (np. użycie złącza UART lub skryptu Web API).</em></p>
 
-<div class="d-flex justify-content-end mt-5 border-top pt-4" markdown="1">
-[Krok 2: Aktywacja trybu RNDIS &raquo;]({{ site.baseurl }}/02-rndis.html){: .btn .btn-primary .btn-lg}
+<div class="d-flex justify-content-between mt-5 border-top pt-4" markdown="1">
+[&laquo; Strona główna]({{ site.baseurl }}/index.html){: .btn .btn-outline-secondary}
+[2. Aktywacja RNDIS &raquo;]({{ site.baseurl }}/02-rndis.html){: .btn .btn-primary}
 </div>

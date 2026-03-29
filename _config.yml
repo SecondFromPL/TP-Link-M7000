@@ -1,8 +1,6 @@
 title: TP-Link M7000 USB Tethering
 description: Kompletny poradnik odblokowania udostępniania internetu po kablu USB w routerze TP-Link M7000.
 lang: pl
-markdown: kramdown
 baseurl: "/TP-Link-M7000"
-url: "https://SecondFromPL.github.io"
 plugins:
   - jekyll-seo-tag
