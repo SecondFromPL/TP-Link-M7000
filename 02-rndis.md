@@ -4,8 +4,6 @@ title: 2. Aktywacja trybu RNDIS
 show_warning: false
 ---
 
-[&laquo; Strona główna]({{ site.baseurl }}/index.html){: .btn .btn-secondary .mb-4}
-
 <h1 class="mb-4">2. Aktywacja trybu RNDIS</h1>
 
 <p>Połącz się z routerem za pomocą klienta Telnet. Zmień domyślny tryb pracy portu USB z <code>user</code> na <code>rndis</code> i zrestartuj urządzenie.</p>
@@ -36,7 +34,7 @@ show_warning: false
 
 <p>Po restarcie podłącz router kablem do komputera z Windows 11. System powinien wykryć nowe urządzenie sieciowe.</p>
 
-<div class="d-flex justify-content-between mt-5 border-top pt-4" markdown="1">
+<div class="d-flex mt-5 border-top pt-4" markdown="1">
 [&laquo; 1. Telnet]({{ site.baseurl }}/01-telnet.html){: .btn .btn-outline-secondary}
-[3. Sieć i mostkowanie &raquo;]({{ site.baseurl }}/03-network.html){: .btn .btn-primary}
+[3. Sieć i mostkowanie &raquo;]({{ site.baseurl }}/03-network.html){: .btn .btn-primary .ms-auto}
 </div>

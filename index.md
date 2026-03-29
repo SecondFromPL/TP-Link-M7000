@@ -33,11 +33,13 @@ show_warning: true
 
 [**3. Konfiguracja sieci i mostkowania** - Przypisanie nowego interfejsu do sieci lokalnej]({{ site.baseurl }}/03-network.html){: .list-group-item .list-group-item-action .p-3}
 
-[**4. Autostart ustawień (rc.local)** - Utrwalenie wprowadzonych modyfikacji]({{ site.baseurl }}/04-autostart.html){: .list-group-item .list-group-item-action .p-3}
+[**4. Autostart ustawień (Skrypt)** - Utrwalenie wprowadzonych modyfikacji]({{ site.baseurl }}/04-autostart.html){: .list-group-item .list-group-item-action .p-3}
 
-[**5. Opcjonalne: Optymalizacja i wyłączenie Wi-Fi** - Dodatkowe kroki zmniejszające zużycie baterii]({{ site.baseurl }}/05-optimization.html){: .list-group-item .list-group-item-action .p-3}
+[**5. Opcjonalne: Optymalizacja** - Dodatkowe kroki zmniejszające zużycie baterii]({{ site.baseurl }}/05-optimization.html){: .list-group-item .list-group-item-action .p-3}
+
+[**6. Sterowanie Modemem** - Bezpośrednia komunikacja z modemem przez AT]({{ site.baseurl }}/06-modem.html){: .list-group-item .list-group-item-action .p-3}
 </div>
 
-<div class="d-flex justify-content-end mt-5 border-top pt-4" markdown="1">
-[Rozpocznij: 1. Telnet (Root) &raquo;]({{ site.baseurl }}/01-telnet.html){: .btn .btn-primary}
+<div class="d-flex mt-5 border-top pt-4" markdown="1">
+[Rozpocznij: 1. Telnet (Root) &raquo;]({{ site.baseurl }}/01-telnet.html){: .btn .btn-primary .ms-auto}
 </div>
