@@ -7,40 +7,64 @@
 <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
+  body { margin: 0; padding: 0; overflow-x: hidden; }
   .console-block { position: relative; background-color: #1e1e1e; color: #d4d4d4; padding: 2.5rem 1rem 1rem 1rem; border-radius: 0.5rem; font-family: var(--bs-font-monospace); margin-bottom: 1.5rem; }
   .console-block::before { content: "root@M7000:~#"; position: absolute; top: 0.6rem; left: 1rem; color: #4af626; font-size: 0.85rem; font-weight: bold; }
   .console-block .copy-btn { position: absolute; top: 0.4rem; right: 0.4rem; font-size: 0.75rem; }
   .console-block pre { margin: 0; color: inherit; }
   #backToTopBtn { display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; }
+  
+  .wrapper { display: flex; width: 100%; min-height: 100vh; }
+  #desktopSidebar { width: 280px; flex-shrink: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; border-right: 1px solid #dee2e6; background: #fff; z-index: 10; }
+  #mainContent { flex-grow: 1; transition: opacity 0.3s ease, filter 0.3s ease; min-width: 0; }
+  
+  @media (min-width: 768px) {
+    #desktopSidebar:hover ~ #mainContent { opacity: 0.3; filter: grayscale(30%); }
+  }
 </style>
 </head>
 <body>
-<div class="container mt-4 mb-5">
-  <button class="btn btn-outline-dark d-md-none mb-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
-    ☰ Menu
-  </button>
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
-    <div class="offcanvas-header border-bottom">
-      <h5 class="offcanvas-title" id="sidebarMenuLabel">Spis treści</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="wrapper">
+  <nav id="desktopSidebar" class="d-none d-md-block p-4 shadow-sm">
+    <h5 class="mb-4">Spis treści</h5>
+    <div class="list-group list-group-flush">
+      <a href="{{ site.baseurl }}/index.html" class="list-group-item list-group-item-action border-0">Strona główna</a>
+      <a href="{{ site.baseurl }}/01-telnet.html" class="list-group-item list-group-item-action border-0">1. Telnet</a>
+      <a href="{{ site.baseurl }}/02-rndis.html" class="list-group-item list-group-item-action border-0">2. Tryb RNDIS</a>
+      <a href="{{ site.baseurl }}/03-network.html" class="list-group-item list-group-item-action border-0">3. Konfiguracja sieci</a>
+      <a href="{{ site.baseurl }}/04-autostart.html" class="list-group-item list-group-item-action border-0">4. Autostart</a>
+      <a href="{{ site.baseurl }}/05-optimization.html" class="list-group-item list-group-item-action border-0">5. Optymalizacja</a>
     </div>
-    <div class="offcanvas-body">
-      <div class="list-group list-group-flush">
-        <a href="{{ site.baseurl }}/index.html" class="list-group-item list-group-item-action">Strona główna</a>
-        <a href="{{ site.baseurl }}/01-telnet.html" class="list-group-item list-group-item-action">1. Telnet</a>
-        <a href="{{ site.baseurl }}/02-rndis.html" class="list-group-item list-group-item-action">2. Tryb RNDIS</a>
-        <a href="{{ site.baseurl }}/03-network.html" class="list-group-item list-group-item-action">3. Konfiguracja sieci</a>
-        <a href="{{ site.baseurl }}/04-autostart.html" class="list-group-item list-group-item-action">4. Autostart</a>
-        <a href="{{ site.baseurl }}/05-optimization.html" class="list-group-item list-group-item-action">5. Optymalizacja</a>
+  </nav>
+  <main id="mainContent">
+    <div class="container py-4 px-md-5">
+      <button class="btn btn-outline-dark d-md-none mb-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+        ☰ Menu
+      </button>
+      {% if page.show_warning %}
+      <div class="alert alert-danger" role="alert">
+        <strong>UWAGA:</strong> Wszelkie modyfikacje oprogramowania układowego wykonujesz na własne ryzyko. Zastosowanie poniższych kroków może wiązać się z utratą gwarancji lub trwałym uszkodzeniem urządzenia (tzw. brick).
       </div>
+      {% endif %}
+      {{ content }}
+    </div>
+  </main>
+</div>
+<div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="mobileSidebar">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title">Spis treści</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="list-group list-group-flush">
+      <a href="{{ site.baseurl }}/index.html" class="list-group-item list-group-item-action">Strona główna</a>
+      <a href="{{ site.baseurl }}/01-telnet.html" class="list-group-item list-group-item-action">1. Telnet</a>
+      <a href="{{ site.baseurl }}/02-rndis.html" class="list-group-item list-group-item-action">2. Tryb RNDIS</a>
+      <a href="{{ site.baseurl }}/03-network.html" class="list-group-item list-group-item-action">3. Konfiguracja sieci</a>
+      <a href="{{ site.baseurl }}/04-autostart.html" class="list-group-item list-group-item-action">4. Autostart</a>
+      <a href="{{ site.baseurl }}/05-optimization.html" class="list-group-item list-group-item-action">5. Optymalizacja</a>
     </div>
   </div>
-  {% if page.show_warning %}
-  <div class="alert alert-danger" role="alert">
-    <strong>UWAGA:</strong> Wszelkie modyfikacje oprogramowania układowego wykonujesz na własne ryzyko. Zastosowanie poniższych kroków może wiązać się z utratą gwarancji lub trwałym uszkodzeniem urządzenia (tzw. brick).
-  </div>
-  {% endif %}
-  {{ content }}
 </div>
 <button id="backToTopBtn" class="btn btn-dark" title="Powrót na górę">&uarr;</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
