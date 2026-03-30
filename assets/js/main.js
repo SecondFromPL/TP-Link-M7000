@@ -1,25 +1,19 @@
-document.addEventListener('click', function (event) {
-  // Sprawdzamy, czy kliknięto przycisk kopiowania
-  if (event.target.classList.contains('copy-btn')) {
-    const button = event.target;
-    const targetId = button.getAttribute('data-clipboard-target');
-    const codeBlock = document.querySelector(targetId);
-    
-    // Kopiujemy wyłącznie tekst ze znacznika <code>. 
-    // Prompt jest poza nim i nie jest zaznaczalny, więc go nie kopiujemy.
+document.querySelectorAll('div.highlighter-rouge').forEach(function(block) {
+  const btn = document.createElement('button');
+  btn.className = 'btn btn-outline-light copy-btn';
+  btn.innerText = 'Kopiuj';
+  btn.onclick = function() {
+    const codeBlock = block.querySelector('code');
     navigator.clipboard.writeText(codeBlock.innerText);
-    
-    // Zmiana tekstu i stylu przycisku
-    const originalText = button.innerText;
-    button.innerText = 'Skopiowano!';
-    button.classList.replace('btn-outline-light', 'btn-success');
-    
-    // Przywrócenie po 2 sekundach
+    const originalText = btn.innerText;
+    btn.innerText = 'Skopiowano!';
+    btn.classList.replace('btn-outline-light', 'btn-success');
     setTimeout(() => {
-      button.innerText = originalText;
-      button.classList.replace('btn-success', 'btn-outline-light');
+      btn.innerText = originalText;
+      btn.classList.replace('btn-success', 'btn-outline-light');
     }, 2000);
-  }
+  };
+  block.appendChild(btn);
 });
 
 const backToTopBtn = document.getElementById("backToTopBtn");
